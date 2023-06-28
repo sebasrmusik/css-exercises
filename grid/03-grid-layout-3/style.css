@@ -5,6 +5,17 @@
 
 .container {
   text-align: center;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 2fr 1fr 4fr 2fr;
+  grid-template-areas: 
+  "he he"
+  "si na"
+  "si ar"
+  "fo fo"
+  ;
+  height: 0;
 }
 
 .container div {
@@ -17,6 +28,25 @@
 
 .header {
   background-color: #393f4d;
+  grid-area: he;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: fit-content;
+}
+
+.header .logo {
+  text-align: left;
+}
+
+.header .menu {
+  display: grid;
+  align-items: center;
+}
+
+.header ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .menu ul,
@@ -26,6 +56,14 @@
 
 .sidebar {
   background-color: #FF7755;
+  grid-area: si;
+  display: grid;
+  gap: 50px;
+}
+
+.sidebar div {
+  display: grid;
+  align-items: center;
 }
 
 .sidebar .photo {
@@ -46,6 +84,13 @@
 
 .nav {
   background-color: #FF7755;
+  grid-area: na;
+}
+
+.nav ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .nav ul li {
@@ -55,6 +100,11 @@
 
 .article {
   background-color: #bccbde;
+  grid-area: ar;
+  display: grid;
+  gap: 15px;
+  grid-auto-rows: 200px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .article p {
@@ -83,6 +133,7 @@
 
 .footer {
   background-color: #393f4d;
+  grid-area: fo;
 }
 
 .footer p {
